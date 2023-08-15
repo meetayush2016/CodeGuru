@@ -1,0 +1,36 @@
+import java.util.*; 
+
+class JavaExample{
+  public static void main(String args[]){
+    //a string with some capital letters
+    String str = "oneTwoThree";
+    //ONE
+    //tWO
+    //tHREE
+    StringBuffer newStr=new StringBuffer(str);
+    for(int i = 0; i < str.length(); i++) {  
+              
+             
+        if(Character.isLowerCase(str.charAt(i))) {  
+                  
+            newStr.setCharAt(i, Character.toUpperCase(str.charAt(i)));  
+        }  
+             
+        else if(Character.isUpperCase(str.charAt(i))) {  
+                
+            newStr.setCharAt(i, Character.toLowerCase(str.charAt(i)));  
+            }  
+        }  
+     
+    
+    // ONEtWOtHREE
+    //split string by capital letters
+    String singleString = newStr.toString();
+    String[] strArray = singleString.split("(?=\\p{Lu})");
+
+    //print substrings
+    for(String s:strArray){
+      System.out.println(s);
+    }
+  }
+}
