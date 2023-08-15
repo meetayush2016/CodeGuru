@@ -1,0 +1,22 @@
+import java.util.*; 
+
+//String[] arr = {apple , berry , mango};
+// required output print :  Apple , Berry , Mango 
+
+class Hello{
+    public static void main(String[] args){
+        String[] arr = {"apple" , "berry" , "mango"};
+        String newStr = ""; 
+        for( String i: arr){
+            String First = i.substring(0,1); 
+            String rest = i.substring(1); 
+            newStr += First.toUpperCase()+rest+" "; 
+        }
+        System.out.print(newStr.trim()); 
+        
+    }
+    
+    
+        
+
+}
