@@ -72,6 +72,23 @@ public class BST {
         if(root == null) return 0 ;
         return size(root.left)+size(root.right)+1 ;
     }
+    static int height(Node root){
+        if(root == null ) return 0 ;
+        return Math.max(height(root.left),height(root.right)) +1 ;
+    }
+    static int size(Node root){
+        if(root == null) return 0 ;
+        return size(root.left)+size(root.right)+1 ;
+    }
+    static int maxi(Node root){
+        if(root == null) return Integer.MIN_VALUE;
+        return Math.max(root.data , Math.max(maxi(root.left),maxi(root.right)));
+    }
+    static int minn(Node root){
+        if(root == null) return Integer.MAX_VALUE;
+        return Math.min(root.data , Math.min(minn(root.left),minn(root.right)));
+
+    }
 }
 class Node{
     Node left ;
